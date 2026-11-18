@@ -377,8 +377,10 @@
     background:var(--bg);
     display:flex;align-items:center;justify-content:center;
     position:relative;
+    overflow:hidden;
   }
   .prod-img svg{width:62%;height:62%}
+  .prod-img img.prod-photo{width:100%;height:100%;object-fit:cover;display:block}
   .tag{
     position:absolute;top:12px;left:12px;
     background:var(--coral);
@@ -685,7 +687,7 @@
     <article class="prod-card">
       <div class="prod-img">
         <span class="tag">-15%</span>
-        <svg viewBox="0 0 120 100"><ellipse cx="60" cy="55" rx="46" ry="32" fill="var(--coral)" opacity=".85"/><rect x="30" y="50" width="60" height="38" rx="10" fill="var(--surface)" stroke="var(--ink)" stroke-width="2"/></svg>
+        <img class="prod-photo" src="assets/products/combi.jpg" alt="Зимовий комбінезон з капюшоном">
         <img class="prod-badge" src="assets/timoska-face.png" alt="Тімоська перевірив">
       </div>
       <div class="prod-body">
@@ -699,7 +701,7 @@
     </article>
     <article class="prod-card">
       <div class="prod-img">
-        <svg viewBox="0 0 120 100"><ellipse cx="60" cy="55" rx="46" ry="32" fill="var(--accent)" opacity=".8"/><rect x="34" y="48" width="52" height="40" rx="12" fill="var(--surface)" stroke="var(--ink)" stroke-width="2"/></svg>
+        <img class="prod-photo" src="assets/products/harness1.jpg" alt="Легкий дощовик з відбивачами">
         <img class="prod-badge" src="assets/timoska-profile.png" alt="Тімоська перевірив">
       </div>
       <div class="prod-body">
@@ -714,7 +716,7 @@
     <article class="prod-card">
       <div class="prod-img">
         <span class="tag">Новинка</span>
-        <svg viewBox="0 0 120 100"><ellipse cx="60" cy="55" rx="46" ry="32" fill="#8FA07A" opacity=".55"/><rect x="36" y="46" width="48" height="42" rx="10" fill="var(--surface)" stroke="var(--ink)" stroke-width="2"/></svg>
+        <img class="prod-photo" src="assets/products/raincoat.jpg" alt="В'язаний светр для той-порід">
         <img class="prod-badge" src="assets/timoska-face.png" alt="Тімоська перевірив">
       </div>
       <div class="prod-body">
@@ -728,7 +730,7 @@
     </article>
     <article class="prod-card">
       <div class="prod-img">
-        <svg viewBox="0 0 120 100"><ellipse cx="60" cy="55" rx="46" ry="32" fill="var(--ink)" opacity=".25"/><rect x="32" y="48" width="56" height="40" rx="10" fill="var(--surface)" stroke="var(--ink)" stroke-width="2"/></svg>
+        <img class="prod-photo" src="assets/products/vest.jpg" alt="Шлея-жилет з м'якою підкладкою">
         <img class="prod-badge" src="assets/timoska-profile.png" alt="Тімоська перевірив">
       </div>
       <div class="prod-body">
@@ -743,17 +745,7 @@
     <article class="prod-card">
       <div class="prod-img">
         <span class="tag">Хіт</span>
-        <svg viewBox="0 0 120 100">
-          <rect x="22" y="24" width="76" height="60" rx="16" fill="var(--coral)" opacity=".9"/>
-          <g stroke="rgba(0,0,0,.18)" stroke-width="1.5">
-            <line x1="22" y1="38" x2="98" y2="38"/>
-            <line x1="22" y1="52" x2="98" y2="52"/>
-            <line x1="22" y1="66" x2="98" y2="66"/>
-            <line x1="46" y1="24" x2="46" y2="84"/>
-            <line x1="70" y1="24" x2="70" y2="84"/>
-          </g>
-          <circle cx="82" cy="34" r="7" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.5"/>
-        </svg>
+        <img class="prod-photo" src="assets/products/sweater.jpg" alt="Пуховик «Стонік» з нашивкою на рукаві">
         <img class="prod-badge" src="assets/timoska-face.png" alt="Тімоська перевірив">
       </div>
       <div class="prod-body">
@@ -768,15 +760,7 @@
     <article class="prod-card">
       <div class="prod-img">
         <span class="tag">Преміум</span>
-        <svg viewBox="0 0 120 100">
-          <rect x="18" y="20" width="84" height="64" rx="22" fill="var(--ink)" opacity=".85"/>
-          <g stroke="rgba(255,255,255,.18)" stroke-width="1.5">
-            <ellipse cx="60" cy="52" rx="38" ry="10"/>
-            <ellipse cx="60" cy="38" rx="30" ry="8"/>
-            <ellipse cx="60" cy="66" rx="30" ry="8"/>
-          </g>
-          <rect x="24" y="26" width="16" height="10" rx="4" fill="var(--accent)"/>
-        </svg>
+        <img class="prod-photo" src="assets/products/harness2.jpg" alt="Пуховик «Монклер» з капюшоном">
         <img class="prod-badge" src="assets/timoska-profile.png" alt="Тімоська перевірив">
       </div>
       <div class="prod-body">
