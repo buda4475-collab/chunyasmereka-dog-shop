@@ -127,6 +127,32 @@
     cursor:pointer;
     white-space:nowrap;
   }
+  .music-btn{
+    width:38px;height:38px;
+    border-radius:50%;
+    border:1.5px solid var(--line);
+    background:var(--surface);
+    color:var(--ink);
+    font-size:16px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    transition:background .15s, transform .15s;
+  }
+  .music-btn:hover{border-color:var(--accent)}
+  .music-btn.playing{
+    background:var(--accent);
+    color:var(--accent-ink);
+    border-color:var(--accent);
+    animation:music-pulse 1.4s ease-in-out infinite;
+  }
+  @keyframes music-pulse{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.08)}
+  }
+  @media (prefers-reduced-motion: reduce){ .music-btn.playing{animation:none} }
 
   /* ---------- hero ---------- */
   .hero{
@@ -646,9 +672,42 @@
       <a href="#about">Про нас</a>
       <a href="#contacts">Контакти</a>
     </nav>
+    <button class="music-btn" id="musicBtn" type="button" aria-label="Увімкнути музику" title="Artik &amp; Asti — Лампочки">♪</button>
     <button class="nav-cta" type="button">Написати нам →</button>
   </div>
 </header>
+
+<div id="musicMount" hidden></div>
+<script>
+(function(){
+  var btn = document.getElementById('musicBtn');
+  var mount = document.getElementById('musicMount');
+  var VIDEO_ID = 'q_wx_C3ps5U'; // ARTIK & ASTI — Лампочки
+  var playing = false;
+  btn.addEventListener('click', function(){
+    if (!playing) {
+      try {
+        var iframe = document.createElement('iframe');
+        iframe.width = '0'; iframe.height = '0';
+        iframe.style.position = 'fixed';
+        iframe.style.border = '0';
+        iframe.allow = 'autoplay';
+        iframe.src = 'https://www.youtube.com/embed/' + VIDEO_ID + '?autoplay=1&controls=0';
+        mount.innerHTML = '';
+        mount.appendChild(iframe);
+        playing = true;
+        btn.classList.add('playing');
+      } catch (e) {
+        window.open('https://www.youtube.com/watch?v=' + VIDEO_ID, '_blank');
+      }
+    } else {
+      mount.innerHTML = '';
+      playing = false;
+      btn.classList.remove('playing');
+    }
+  });
+})();
+</script>
 
 <div class="hero-outer">
   <div class="hero-side hero-side-left">
