@@ -254,6 +254,39 @@
     letter-spacing:.03em;
   }
 
+  /* ---------- hero side cards (wide screens only, bonus to the in-flow strip) ---------- */
+  .hero-outer{position:relative}
+  .hero-side{
+    display:none;
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:150px;
+    z-index:1;
+  }
+  @media (min-width:1300px){ .hero-side{display:block} }
+  .hero-side-left{ right:calc(50% + 650px); }
+  .hero-side-right{ left:calc(50% + 650px); }
+  .hero-side img{
+    width:100%;
+    aspect-ratio:3/3.6;
+    object-fit:cover;
+    object-position:center 18%;
+    border-radius:16px;
+    box-shadow:0 14px 28px rgba(0,0,0,.22);
+    display:block;
+  }
+  .hero-side-left img{transform:rotate(-5deg)}
+  .hero-side-right img{transform:rotate(5deg)}
+  .hero-side-cap{
+    margin-top:10px;
+    text-align:center;
+    font-family:var(--font-mono);
+    font-size:11px;
+    font-weight:700;
+    color:var(--ink-soft);
+  }
+
   /* ---------- founders strip (always visible, in-flow) ---------- */
   .founders-strip{
     display:flex;
@@ -597,6 +630,15 @@
   </div>
 </header>
 
+<div class="hero-outer">
+  <div class="hero-side hero-side-left">
+    <img src="assets/chunya-card.jpg" alt="Чуня">
+    <div class="hero-side-cap">ЧУНЯ</div>
+  </div>
+  <div class="hero-side hero-side-right">
+    <img src="assets/smereka-card.jpg" alt="Смерека">
+    <div class="hero-side-cap">СМЕРЕКА</div>
+  </div>
 <section class="wrap hero">
   <div>
     <div class="eyebrow">Перевірено головним тестувальником бренду</div>
@@ -632,6 +674,7 @@
     </div>
   </div>
 </section>
+</div>
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
@@ -787,7 +830,7 @@
         <div class="frame"><img src="assets/founders-beer.png" alt="Чуня і Смерека з пивом"></div>
         <span>після зміни 🍻</span>
       </div>
-      <img src="assets/founders-silhouette.png" alt="Чуня і Смерека, співзасновники CHUNYA×SMEREKA">
+      <img src="assets/founders-embrace.png" alt="Чуня і Смерека, співзасновники CHUNYA×SMEREKA">
       <div class="about-sticker right">
         <div class="frame"><img src="assets/timoska-profile.png" alt="Тімоська"></div>
         <span>і Тімоська поруч</span>
@@ -795,7 +838,8 @@
     </div>
     <div class="about-copy">
       <h3>Чуня, Смерека і Тімоська, який усе це затвердив</h3>
-      <p>CHUNYA×SMEREKA почався з того, що власному псу складно було знайти одяг, який сидить за розміром і не тисне. Тепер кожна модель проходить «примірку Тімоськи» перш ніж потрапити в каталог.</p>
+      <p>Чуня і Смерека товаришують ще зі школи, а разом у цій справі — вже кілька років. Усе почалося з того, що Тімоська категорично відмовлявся виходити на прогулянку в дощ, поки на ньому не було нормального дощовика — а купити такий, щоб і сидів добре, і не сповзав, виявилось майже неможливо. Перший зразок пошили самі, на кухні, з того, що знайшлося вдома. Тімоська його схвалив з першого разу — і стало зрозуміло, що робити далі.</p>
+      <p>Відтоді нічого не змінилось: Чуня креслить лекала, Смерека шукає тканини, а Тімоська особисто приймає кожну модель, перш ніж вона потрапляє в каталог.</p>
       <div class="founder-roles">
         <div class="role-chip"><img src="assets/founder-b.png" alt="Чуня"><div><b>Чуня</b><span>СПІВЗАСНОВНИК</span></div></div>
         <div class="role-chip"><img src="assets/founder-a.png" alt="Смерека"><div><b>Смерека</b><span>СПІВЗАСНОВНИК</span></div></div>
