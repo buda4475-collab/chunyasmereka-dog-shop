@@ -127,32 +127,53 @@
     cursor:pointer;
     white-space:nowrap;
   }
-  .music-btn{
-    width:38px;height:38px;
-    border-radius:50%;
-    border:1.5px solid var(--line);
+  /* ---------- music card ---------- */
+  .music-card{
+    margin-top:18px;
     background:var(--surface);
-    color:var(--ink);
-    font-size:16px;
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:18px 20px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+  }
+  .music-btn{
+    width:56px;height:56px;
+    border-radius:50%;
+    border:none;
+    background:var(--ink);
+    color:var(--bg);
+    font-size:20px;
     cursor:pointer;
     display:flex;
     align-items:center;
     justify-content:center;
     flex-shrink:0;
+    position:relative;
     transition:background .15s, transform .15s;
+    box-shadow:0 6px 14px rgba(0,0,0,.18);
   }
-  .music-btn:hover{border-color:var(--accent)}
-  .music-btn.playing{
-    background:var(--accent);
-    color:var(--accent-ink);
-    border-color:var(--accent);
-    animation:music-pulse 1.4s ease-in-out infinite;
+  .music-btn:hover{transform:scale(1.05)}
+  .music-btn .bars{display:none; gap:3px; align-items:flex-end; height:18px}
+  .music-btn .note{display:block}
+  .music-btn.playing{background:var(--coral); animation:music-pulse 1.6s ease-in-out infinite}
+  .music-btn.playing .note{display:none}
+  .music-btn.playing .bars{display:flex}
+  .music-btn .bars span{
+    width:3px;
+    background:var(--bg);
+    border-radius:2px;
+    animation:bar-bounce .9s ease-in-out infinite;
   }
-  @keyframes music-pulse{
-    0%,100%{transform:scale(1)}
-    50%{transform:scale(1.08)}
-  }
-  @media (prefers-reduced-motion: reduce){ .music-btn.playing{animation:none} }
+  .music-btn .bars span:nth-child(1){height:6px;animation-delay:0s}
+  .music-btn .bars span:nth-child(2){height:16px;animation-delay:.15s}
+  .music-btn .bars span:nth-child(3){height:10px;animation-delay:.3s}
+  @keyframes bar-bounce{ 0%,100%{transform:scaleY(.5)} 50%{transform:scaleY(1)} }
+  @keyframes music-pulse{ 0%,100%{transform:scale(1)} 50%{transform:scale(1.06)} }
+  @media (prefers-reduced-motion: reduce){ .music-btn.playing{animation:none} .music-btn .bars span{animation:none} }
+  .music-copy b{display:block;font-size:14px;margin-bottom:3px}
+  .music-copy span{display:block;font-size:13px;color:var(--ink-soft);line-height:1.4}
 
   /* ---------- hero ---------- */
   .hero{
@@ -672,7 +693,6 @@
       <a href="#about">Про нас</a>
       <a href="#contacts">Контакти</a>
     </nav>
-    <button class="music-btn" id="musicBtn" type="button" aria-label="Увімкнути музику" title="Artik &amp; Asti — Лампочки">♪</button>
     <button class="nav-cta" type="button">Написати нам →</button>
   </div>
 </header>
@@ -750,6 +770,16 @@
         <img src="assets/timoska-face.png" alt="Тімоська — обличчя бренду CHUNYA×SMEREKA">
       </div>
       <div class="timoska-caption">ТІМОСЬКА · ГОЛОВНА МОДЕЛЬ БРЕНДУ</div>
+      <div class="music-card">
+        <button class="music-btn" id="musicBtn" type="button" aria-label="Увімкнути музику" title="Artik &amp; Asti — Лампочки">
+          <span class="note">♪</span>
+          <span class="bars"><span></span><span></span><span></span></span>
+        </button>
+        <div class="music-copy">
+          <b>Натисніть іконку музики</b>
+          <span>Насолоджуйтесь треком і переглядайте наш каталог одягу від Тімоськи</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
