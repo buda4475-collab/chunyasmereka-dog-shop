@@ -360,6 +360,26 @@
   .section-note{color:var(--ink-soft);font-size:14px;max-width:38ch}
 
   /* ---------- categories ---------- */
+  #catalog{position:relative}
+  .catalog-mascot{
+    display:none;
+    position:absolute;
+    right:4px;
+    top:-18px;
+    width:104px;
+    z-index:1;
+  }
+  @media (min-width:1020px){ .catalog-mascot{display:block} }
+  .catalog-mascot img{width:100%;display:block;filter:drop-shadow(0 12px 16px rgba(0,0,0,.2))}
+  .catalog-mascot span{
+    display:block;
+    text-align:center;
+    margin-top:6px;
+    font-family:var(--font-mono);
+    font-size:10px;
+    font-weight:700;
+    color:var(--ink-soft);
+  }
   .cat-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -694,6 +714,10 @@
 </div>
 
 <section class="wrap section" id="catalog">
+  <div class="catalog-mascot">
+    <img src="assets/timoska-fullbody.png" alt="Тімоська йде обирати одяг">
+    <span>обирає сам 🐾</span>
+  </div>
   <div class="section-head">
     <h2 class="section-title">Категорії</h2>
     <p class="section-note">Від легких дощовиків до зимових комбінезонів — обирайте за сезоном і породою.</p>
